@@ -115,6 +115,10 @@ class LinkedList {
   }
 
   dequeue() {
+  if(this.head === null) {
+    return console.log("Nothing to dequeue");
+  }
+
     const firstOut = this.head;
 
     if(this.head === this.tail) {
@@ -127,6 +131,22 @@ class LinkedList {
     this.head = this.head.next;
     this.length--;
     return console.log("Dequeued = " + firstOut.value.value);
+  }
+
+  peek() {
+    if(this.head === null) {
+      return console.log("No first value");
+    } else {
+      return console.log("First value = " + this.head.value.value);
+    }
+  }
+
+  isEmpty() {
+    if(this.head === null) {
+      console.log("true");
+    } else {
+      console.log("false");
+    }
   }
 
   print() {
@@ -154,8 +174,11 @@ let node2 = new Node(2);
 let node3 = new Node(3);
 
 let q = new LinkedList();
+q.isEmpty();
 q.enqueue(node1);
-// q.enqueue(node2);
-// q.enqueue(node3);
+q.enqueue(node2);
+q.enqueue(node3);
+q.isEmpty();
+q.peek();
 q.dequeue();
 q.print();
