@@ -5,9 +5,9 @@
 const factorial = (n) => {
     if(n === 1 || n === 0) {
         return 1
-    } else {
+    } else if (n >= 2 && n <= 12) {
         return n * factorial(n-1)
     }
 }
 
-console.log(factorial(3))
+console.log(factorial(12))
