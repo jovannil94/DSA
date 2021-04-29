@@ -66,7 +66,6 @@ const BFS = (root) => {
         //removes first value in queue
         let node = q.shift();
         console.log(node.value);
-        //
         if(node.left) {
             q.push(node.left);
         }
@@ -76,4 +75,25 @@ const BFS = (root) => {
     }
 }
 
-BFS(a);
+//BFS using queue implementations
+const qBFS = (root) => {
+  let q = new Queue();
+  let tree = [root];
+  while(tree.length) {
+    let node = tree.shift;
+    q.enqueue(node.value);
+    if(node.left) {
+      tree.push(node.left);
+      q.enqueue(node.left);
+    }
+    if(node.right) {
+      tree.push(node.right);
+      q.enqueue(node.right);
+    }
+  }
+  console.log(q)
+}
+
+
+// BFS(a);
+qBFS(a);

@@ -125,28 +125,24 @@ class LinkedList {
       this.head = null;
       this.tail = null;
       this.length--;
-      return console.log("Dequeued = " + firstOut.value.value);;
+      return console.log("Dequeued = " + firstOut.value);;
     }
 
     this.head = this.head.next;
     this.length--;
-    return console.log("Dequeued = " + firstOut.value.value);
+    return console.log("Dequeued = " + firstOut.value);
   }
 
   peek() {
-    if(this.head === null) {
-      return console.log("No first value");
+    if(this.head !== null) {
+      return this.head.value
     } else {
-      return console.log("First value = " + this.head.value.value);
+      return null
     }
   }
 
   isEmpty() {
-    if(this.head === null) {
-      console.log("true");
-    } else {
-      console.log("false");
-    }
+    return this.head === null
   }
 
   print() {
@@ -155,7 +151,7 @@ class LinkedList {
   
     while(pointer !== null) {
       //needed a double value because value is the name of the key and needed to print actual value of said key
-      display += pointer.value.value 
+      display += pointer.value 
       if (pointer.next !== null) {
         display += " -> ";
       }
@@ -169,16 +165,12 @@ class LinkedList {
   }
 }
 
-let node1 = new Node(1);
-let node2 = new Node(2);
-let node3 = new Node(3);
-
 let q = new LinkedList();
-q.isEmpty();
-q.enqueue(node1);
-q.enqueue(node2);
-q.enqueue(node3);
-q.isEmpty();
-q.peek();
+console.log(q.isEmpty());
+q.enqueue("1");
+q.enqueue("2");
+q.enqueue("3");
+console.log(q.isEmpty());
+console.log(q.peek());
 q.dequeue();
 q.print();
