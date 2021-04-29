@@ -10,17 +10,17 @@ class TreeNode {
     }
 }
 
-let a = new TreeNode("1");
-let b = new TreeNode("1");
-let c = new TreeNode("1");
-let d = new TreeNode("2");
-let e = new TreeNode("2");
-let f = new TreeNode("3");
-let g = new TreeNode("4");
-let h = new TreeNode("6");
-let i = new TreeNode("10");
-let j = new TreeNode("11");
-let k = new TreeNode("10");
+let a = new TreeNode("a");
+let b = new TreeNode("b");
+let c = new TreeNode("c");
+let d = new TreeNode("d");
+let e = new TreeNode("e");
+let f = new TreeNode("f");
+let g = new TreeNode("g");
+let h = new TreeNode("h");
+let i = new TreeNode("i");
+let j = new TreeNode("j");
+let k = new TreeNode("k");
 
 a.left = b;
 a.right = g;
@@ -50,3 +50,5 @@ const leafNodes = (root) => {
         console.log(root.value)
     }
 }
+
+leafNodes(a)
