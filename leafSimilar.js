@@ -37,18 +37,57 @@ g.right = k;
 h.left = i;
 h.right = j;
 
+let l = new TreeNode("a");
+let m = new TreeNode("b");
+let n = new TreeNode("c");
+let o = new TreeNode("d");
+let p = new TreeNode("e");
+let q = new TreeNode("f");
+let r = new TreeNode("g");
+let s = new TreeNode("h");
+let t = new TreeNode("i");
+let u = new TreeNode("j");
+let v = new TreeNode("k");
+
+l.left = m;
+l.right = r;
+
+m.left = n;
+m.right = q;
+
+n.left = o;
+n.right = p;
+
+r.left = s;
+r.right = v;
+
+s.left = t;
+s.right = u;
+
 const leafSimilar = (root1, root2) => {
+    const leafNodes = (root, arr) => {
+        if(!root) return arr;
 
-}
-
-const leafNodes = (root) => {
-    if(!root) return;
-
-    leafNodes(root.left);
-    leafNodes(root.right);
-    if(!root.left && !root.right) {
-        console.log(root.value)
+        if(!root.left && !root.right) {
+            arr.push(root.value)
+        }
+        leafNodes(root.left, arr);
+        leafNodes(root.right, arr);
+        //forgot to add the arr back into the recursion for more manipulation
     }
+    let arr1 = [];
+    let arr2 = [];
+    let result = true;
+    leafNodes(root1, arr1);
+    leafNodes(root2, arr2);
+    for(let i = 0; i < arr1.length; i ++) {
+        if(arr1[i] !== arr2[i]){
+            result = false;
+        }
+    }
+    return result
 }
 
-leafNodes(a)
+
+
+console.log(leafSimilar(a, l))

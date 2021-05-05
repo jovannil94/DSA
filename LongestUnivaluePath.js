@@ -79,23 +79,31 @@ h.right = j;
 let count = 0;
 const findLongestUniPath = (root) => {
     dfs(root);
+    //helper function
     return count;
+    //returns number of edges between nodes that have similae values and have child/parent relations
 }
 
 const dfs = (root) => {
     if(root === null) return 0;
     let leftPath = dfs(root.left);
     let rightPath = dfs(root.right);
+    //goes down left and right from root to cover binary tree
     let leftCheck = 0;
     let rightCheck = 0;
+    //checks will have the longest path of left or right, holding memory
     if(root.left !== null && root.value === root.left.value) {
         leftCheck = leftPath + 1;
     }
     if(root.right !== null && root.value === root.right.value) {
         rightCheck = rightPath + 1;
     }
-    count = Math.max(count, leftCheck + rightCheck);
-    return Math.max(leftCheck, rightCheck);
+
+    //checks if child exist and if its value is the same as parents, recalls function (recursion) and adds 1 indicating path has two nodes with similar paths
+    //if not the same, function continues without altering checks
+    return count = Math.max(leftCheck, rightCheck);
+    //both checks are filled and using max to find which is greater and then is assigned to count which is returned
 }
 
 console.log(findLongestUniPath(a));
+//returns the length of the path not the number of nodes ex: two nodes is 1 edge
