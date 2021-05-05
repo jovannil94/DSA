@@ -125,12 +125,12 @@ class LinkedList {
       this.head = null;
       this.tail = null;
       this.length--;
-      return console.log("Dequeued = " + firstOut.value);;
+      return firstOut.value;
     }
 
     this.head = this.head.next;
     this.length--;
-    return console.log("Dequeued = " + firstOut.value);
+    return firstOut.value
   }
 
   peek() {

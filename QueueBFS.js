@@ -78,16 +78,14 @@ const BFS = (root) => {
 //BFS using queue implementations
 const qBFS = (root) => {
   let q = new Queue();
-  let tree = [root];
-  while(tree.length) {
-    let node = tree.shift;
-    q.enqueue(node.value);
+  q.enqueue(root);
+  while(!q.isEmpty()) {
+    let node = q.dequeue();
+    console.log(node.value);
     if(node.left) {
-      tree.push(node.left);
       q.enqueue(node.left);
     }
     if(node.right) {
-      tree.push(node.right);
       q.enqueue(node.right);
     }
   }

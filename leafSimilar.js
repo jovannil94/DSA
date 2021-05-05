@@ -71,7 +71,7 @@ const leafSimilar = (root1, root2) => {
 
         if(!root.left && !root.right) {
             arr.push(root.value)
-            //pushes arr with all leaves of tree
+            //pushes leaf value into array
         }
         leafNodes(root.left, arr);
         leafNodes(root.right, arr);

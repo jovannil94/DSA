@@ -31,5 +31,5 @@ const countHIRecursively = (str, i = 0) => {
 console.log(countHIRecursively(string3))
 
 //the base case for the recursion is the length of the string as we increment upwards, once the variable becomes equivalent to the length it returns 0, thus returning an count that was withheld in memory
-//the slice checks every possible two spaces for a hi and if so holds a sum of 1 in memory and recalls the function with a higher count variable
-//else it recalls the function and also checks the next varaible index of the string without adding to the total sum
+//the slice checks every possible two spaces for a hi and if so holds a sum of 1 in memory and recalls the function with a higher index
+//else it recalls the function and also checks the next index of the string without adding to the total sum
