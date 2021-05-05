@@ -67,25 +67,30 @@ s.right = u;
 const leafSimilar = (root1, root2) => {
     const leafNodes = (root, arr) => {
         if(!root) return arr;
+        //checks if root exist, works as basecase and return array when tree has been traversed
 
         if(!root.left && !root.right) {
             arr.push(root.value)
+            //pushes arr with all leaves of tree
         }
         leafNodes(root.left, arr);
         leafNodes(root.right, arr);
+        //recalls function with children of root to find every leaf and holds in memory the current state of the array
         //forgot to add the arr back into the recursion for more manipulation
     }
     let arr1 = [];
     let arr2 = [];
-    let result = true;
+    //arrays must exist to be manipulated within the function
     leafNodes(root1, arr1);
     leafNodes(root2, arr2);
+    //calls both roots in helper function with corresponding arrays
     for(let i = 0; i < arr1.length; i ++) {
         if(arr1[i] !== arr2[i]){
-            result = false;
+            //iterates through the array checking each index to see if it matches with the corresponding index of the second array, if it doesn't result is changed to false
+            return false;
         }
     }
-    return result
+    return true
 }
 
 
